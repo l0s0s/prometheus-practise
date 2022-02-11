@@ -6,6 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// ReadResponseStatusCode read status code from response and increase metric.
 func ReadResponseStatusCode() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		c.Next()

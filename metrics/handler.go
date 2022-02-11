@@ -14,16 +14,20 @@ func init() {
 	)
 }
 
+// Handler describe /metrics api.
 type Handler struct{}
 
+// NewHandler return new instance of Handler.
 func NewHandler() *Handler {
 	return &Handler{}
 }
 
+// Metrics return inforamtion about all metrics.
 func (h *Handler) Metrics(c *gin.Context) {
 	promhttp.Handler().ServeHTTP(c.Writer, c.Request)
 }
 
+// BindRoutes bind gin routes to handler methods.
 func (h *Handler) BindRoutes(group *gin.RouterGroup) {
 	group.GET("/metrics", h.Metrics)
 }

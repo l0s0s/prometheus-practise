@@ -12,7 +12,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func newMockMetricsApi(h *metrics.Handler) *httptest.Server {
+func newMockMetricsAPI(h *metrics.Handler) *httptest.Server {
 	gin.SetMode(gin.ReleaseMode)
 
 	r := gin.New()
@@ -23,7 +23,7 @@ func newMockMetricsApi(h *metrics.Handler) *httptest.Server {
 }
 
 func TestMetrics(t *testing.T) {
-	ts := newMockMetricsApi(metrics.NewHandler())
+	ts := newMockMetricsAPI(metrics.NewHandler())
 
 	defer ts.Close()
 

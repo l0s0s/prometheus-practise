@@ -33,12 +33,12 @@ func TestOk(t *testing.T) {
 	assert.Equal(t, http.StatusOK, resp.StatusCode)
 }
 
-func TestUnauthorized(t *testing.T) {
+func TestUnauthorised(t *testing.T) {
 	ts := startTestServer(mock.NewHandler())
 
 	defer ts.Close()
 
-	resp, err := helper.MakeRequest(ts.URL + "/api/v1/mock/unauthorized")
+	resp, err := helper.MakeRequest(ts.URL + "/api/v1/mock/unauthorised")
 	require.NoError(t, err)
 
 	assert.Equal(t, http.StatusUnauthorized, resp.StatusCode)
