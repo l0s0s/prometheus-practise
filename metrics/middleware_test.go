@@ -55,7 +55,7 @@ func TestReadResponseStatusCode_RequestToUnauthorithedEndpoint_increaseStatus401
 
 	defer ts.Close()
 
-	_, err := helper.MakeRequest(ts.URL + "/api/v1/mock/unauthorithed")
+	_, err := helper.MakeRequest(ts.URL + "/api/v1/mock/unauthorised")
 	require.NoError(t, err)
 
 	assert.Equal(t, float64(1), getMetricValue(metrics.Status401))
